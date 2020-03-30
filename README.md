@@ -9,7 +9,7 @@ Feel free to reference your Ruby calculator project.
 ## At a Glance
 
 - Individual, [stage 1](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/classroom/rule-of-three.md#stage-1) project
-- Due before class, **DATE HERE**
+- Due before class, **Wednesday, April 1**
 - Submit this project with a PR
 
 ## Learning Goals
