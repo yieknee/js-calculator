@@ -77,7 +77,7 @@ const exampleInvalidNumInput3 = {
 }
 
 const calculate = function(input) { 
-  if(isNaN(input.num1) || isNaN(input.num2)){
+  if(isNaN(input.num1) || isNaN(input.num2) || input.num1 === "" || input.num1 === " " || input.num2 === "" || input.num2 === " "){
     if(isNaN(input.num1) && isNaN(input.num2)){
       console.log(`${input.num1} and ${input.num2} are not numbers. Please enter numbers.`);
     }
@@ -131,4 +131,45 @@ console.log(calculate(exampleInvalidNumInput))
 console.log(calculate(exampleInvalidNumInput2))
 console.log(calculate(exampleInvalidNumInput3))
 
+const calculateInput = function(input) {
+  input.num1 = parseInt(input.num1);
+  input.num2 = parseInt(input.num2);
+  if(isNaN(input.num1) || isNaN(input.num2)){
+    console.log('One of your inputs is not a number. Please enter a number.');
+  }
+  else{
 
+    if(input.operation === 'add' || input.operation === '+'){
+      let sum = input.num1 + input.num2;
+      console.log(sum);
+    }
+    else if(input.operation === 'subtract' || input.operation === '-'){
+      let difference = input.num1 - input.num2;
+      console.log(difference);
+    }
+    else if(input.operation === 'multiply' || input.operation === '*'){
+      let product = input.num1 * input.num2;
+      console.log(product);
+    }
+    else if(input.operation === 'divide' || input.operation === '/'){
+      if(input.num2 === 0){
+        console.log('Div/0 Error! You can not divide by 0!')
+      }
+      else{
+        let quotient = input.num1 / input.num2;
+        console.log(quotient);
+      }
+    }
+    else {
+      console.log(`${input.operation} is not a valid operand`);
+    }
+  }
+}
+
+const prompt = require('prompt');
+const calculator = function(error, promptInput) {
+  calculateInput(promptInput);
+}
+prompt.start();
+
+prompt.get(['num1','num2','operation'], calculator);
