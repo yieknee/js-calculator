@@ -2,79 +2,79 @@ const exampleAdditionInput = {
   num1: 3,
   num2: 5,
   operation: 'add',
-}
+};
 
 const exampleAdditionInput2 = {
   num1: 3,
   num2: 5,
   operation: '+',
-}
+};
 
 const exampleSubractionInput = {
   num1: 9,
   num2: 3,
   operation: 'subtract',
-}
+};
 
 const exampleSubractionInput2 = {
   num1: 9,
   num2: 3,
   operation: '-',
-}
+};
 
 const exampleMultiplicationInput = {
   num1: 12,
   num2: 23,
   operation: 'multiply',
-}
+};
 
 const exampleMultiplicationInput2 = {
   num1: 12,
   num2: 23,
   operation: '*',
-}
+};
 
 const exampleDivisionInput = {
   num1: 13,
   num2: 4,
   operation: 'divide',
-}
+};
 
 const exampleDivisionInput2 = {
   num1: 13,
   num2: 4,
   operation: '/',
-}
+};
 
 const exampleDiv0ErrorInput = {
   num1: 13,
   num2: 0,
   operation: '/',
-}
+};
 
 const exampleInvalidOperationInput = {
   num1: 13,
   num2: 4,
   operation: 'quarantine',
-}
+};
 
 const exampleInvalidNumInput = {
   num1: 'horse',
   num2: 23,
   operation: '-',
-}
+};
 
 const exampleInvalidNumInput2 = {
   num1: 13,
   num2: 'horse',
   operation: '*',
-}
+};
 
 const exampleInvalidNumInput3 = {
   num1: 'horse',
   num2: 'buggy',
   operation: 'divide',
-}
+};
 
 const calculate = function(input) { 
   if(isNaN(input.num1) || isNaN(input.num2) || input.num1 === "" || input.num1 === " " || input.num2 === "" || input.num2 === " "){
@@ -86,7 +86,7 @@ const calculate = function(input) {
     }
     else if(isNaN(input.num2)){
       console.log(`${input.num2} is not a number. Please enter a number.`);
-    }
+    };
   }
   else{
 
@@ -109,13 +109,13 @@ const calculate = function(input) {
       else{
         let quotient = input.num1 / input.num2;
         return quotient;
-      }
+      };
     }
     else {
       console.log(`${input.operation} is not a valid operand`);
-    }
-  }
-}
+    };
+  };
+};
 
 console.log(calculate(exampleAdditionInput))
 console.log(calculate(exampleAdditionInput2))
@@ -132,8 +132,8 @@ console.log(calculate(exampleInvalidNumInput2))
 console.log(calculate(exampleInvalidNumInput3))
 
 const calculateInput = function(input) {
-  input.num1 = parseInt(input.num1);
-  input.num2 = parseInt(input.num2);
+  input.num1 = parseFloat(input.num1);
+  input.num2 = parseFloat(input.num2);
   if(isNaN(input.num1) || isNaN(input.num2)){
     console.log('One of your inputs is not a number. Please enter a number.');
   }
@@ -158,18 +158,18 @@ const calculateInput = function(input) {
       else{
         let quotient = input.num1 / input.num2;
         console.log(quotient);
-      }
+      };
     }
     else {
       console.log(`${input.operation} is not a valid operand`);
-    }
-  }
-}
+    };
+  };
+};
 
 const prompt = require('prompt');
 const calculator = function(error, promptInput) {
   calculateInput(promptInput);
-}
+};
 prompt.start();
 
 prompt.get(['num1','num2','operation'], calculator);
